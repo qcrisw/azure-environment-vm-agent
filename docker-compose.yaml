@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+  agent:
+    build: .
+    image: qcrisw/azvm-agent:latest
+    environment:
+      - AZVM_AGENT_NAME=qcri.{{.Task.Slot}}
+      - AZVM_WORK=/azvm/_work/qcri.{{.Task.Slot}}
+      - AZVM_URL=https://dev.azure.com/<orgname>
+      - AZVM_TOKEN=
+      - AZVM_ENVIRONMENT_NAME=
+      - AZVM_PROJECT_NAME=
+      - AZVM_HOSTNAME=
+      - AZVM_TAGS=
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /azvm/_work:/azvm/_work
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
