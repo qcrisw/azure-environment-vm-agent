@@ -12,7 +12,7 @@ if [ -z "$AZVM_TOKEN_FILE" ]; then
     exit 1
   fi
 
-  AZVM_TOKEN_FILE=/AZVM/.token
+  AZVM_TOKEN_FILE=/azvm/.token
   echo -n $AZVM_TOKEN > "$AZVM_TOKEN_FILE"
 fi
 
