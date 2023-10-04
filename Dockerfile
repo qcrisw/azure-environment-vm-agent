@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:22.04
 
 # To make it easier for build and release pipelines to run apt-get,
 # configure apt to not require confirmation (assume the -y argument by default)
@@ -12,8 +12,8 @@ RUN apt-get update \
         jq \
         git \
         iputils-ping \
-        libcurl3 \
-        libicu55 \
+        libcurl4 \
+        libicu70 \
         libunwind8 \
         netcat \
         gettext-base zip unzip sudo
@@ -28,7 +28,7 @@ WORKDIR /azvm
 
 # Install docker binary:
 ARG docker_url=https://download.docker.com/linux/static/stable/x86_64
-ARG docker_version=18.03.1-ce
+ARG docker_version=24.0.1
 RUN curl -fsSL $docker_url/docker-$docker_version.tgz | \
         tar zxvf - --strip 1 -C /usr/bin docker/docker
 

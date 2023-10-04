@@ -47,6 +47,7 @@ print_header() {
 # Let the agent ignore the token env variables
 export VSO_AGENT_IGNORE=AZVM_TOKEN,AZVM_TOKEN_FILE
 
+print_header "0. Docker version: $(docker --version)"
 print_header "1. Determining matching Azure virtual machine deployment agent..."
 
 AZVM_AGENT_RESPONSE=$(curl -LsS \

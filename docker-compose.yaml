@@ -2,7 +2,7 @@ version: '3.5'
 services:
   agent:
     build: .
-    image: qcrisw/azvm-agent:latest
+    image: qcrisw/azvm-agent:v2
     environment:
       - AZVM_AGENT_NAME=qcri.{{.Task.Slot}}
       - AZVM_WORK=/azvm/_work/qcri.{{.Task.Slot}}
