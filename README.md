@@ -22,7 +22,7 @@ Fill in missing configuration in the `environment` section of `docker-compose.ya
 Create a directory on the host to host jobs data and Docker tasks volumes:
 
 ```bash
-mkdir /azvm/_work
+sudo mkdir -p /azvm/_work
 ```
 
 ## Run
