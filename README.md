@@ -25,6 +25,8 @@ Create a directory on the host to host jobs data and Docker tasks volumes:
 sudo mkdir -p /azvm/_work
 ```
 
+`AZVM_TOKEN` can be obtained from User settings -> Personal Access Token -> + New Token (Read+Write+Manage permission)
+
 ## Run
 
 ```bash
